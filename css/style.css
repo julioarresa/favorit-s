@@ -1,0 +1,416 @@
+@charset "UTF-8";
+@import url(gradient.css);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rakkas&display=swap");
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(285, 63.34%, 91.81%) #333;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 80px 120px 0 120px;
+  min-height: 83vh;
+}
+
+body.edit,
+body.add {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-cursor:hover {
+  cursor: url("../assets/icons/eye.svg"), auto;
+  scale: 1.033;
+  transition: all 0.2s ease;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 90px;
+  margin: 0 0 28px 0;
+}
+
+.add-btn {
+  padding: 12px 88px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 56px;
+  transition: all 0.15s ease;
+}
+.add-btn:hover {
+  scale: 1.08;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: #379683;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  row-gap: 44px;
+  justify-content: center;
+  width: 100%;
+}
+.gallery__item {
+  width: calc(33% - 11px);
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 8px;
+}
+.gallery__item__img {
+  width: 100%;
+  height: 300px;
+  border-radius: 2px;
+  background-size: cover;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+.gallery__item__img:hover {
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+.gallery__item__title {
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}
+.gallery__item__foot {
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallery__item__foot__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.gallery__item__foot__buttons__item > img {
+  height: 16px;
+}
+.gallery__item__foot__buttons__item > img:hover {
+  scale: 1.2;
+  transition: 0.2s easy all;
+}
+.gallery__item__foot__buttons__item--delete > img {
+  height: 18px;
+}
+
+.add-main__form {
+  width: 300px;
+  margin: 0 auto;
+}
+.add-main__form input {
+  background-color: transparent;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group--title {
+  width: 369px;
+}
+.form-group--title label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-18px);
+  background: transparent;
+  padding: 0 5px;
+  color: #ccc;
+  font-size: 18px;
+  transition: 0.3s ease all;
+  pointer-events: none;
+}
+.form-group--title label.label-focus {
+  transform: translateY(-47px);
+  font-size: 18px;
+  color: #999;
+}
+
+.form-group input[type=text] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 10px 10px 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-bottom-color 0.3s ease-in-out;
+}
+
+.form-group input[type=text]:focus {
+  border-bottom-color: hsl(286, 41%, 84%);
+}
+
+.form-group input:not(:-moz-placeholder-shown) + label {
+  left: 5px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.form-group input[type=text]:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  left: 5px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.form-group input[type=file] {
+  padding: 5px 0;
+  /* Ajustar el padding para que no desborde */
+}
+
+button[type=submit] {
+  padding: 12px 88px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  transition: all 0.15s;
+  cursor: pointer;
+  width: 395px;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+button[type=submit]:hover {
+  scale: 1.08;
+  transition: all 0.2s ease;
+}
+
+.form-group--file > input {
+  border: none;
+  color: #ddd;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.form-group--file > input:hover {
+  transition: 0.2s;
+  scale: 1.03;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 22px;
+}
+
+.add-main {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 48px;
+}
+.add-main > .title {
+  text-align: end;
+  line-height: 104%;
+  margin: 0;
+  font-size: 64px;
+  font-family: "Poppins", sans-serif;
+}
+.add-main > .title > strong {
+  color: hsl(285, 63.34%, 91.81%);
+}
+.add-main__form {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.add-btn--add {
+  margin: 0;
+  margin-top: 140px;
+  font-weight: 700;
+  font-size: 32px;
+  color: hsl(285, 63.34%, 91.81%);
+  border: none;
+}
+.add-btn--add .arrow {
+  transform: rotate(180deg);
+  height: 20px;
+}
+
+.outline-text {
+  /* Tamaño de la fuente */
+  color: transparent;
+  /* Relleno transparente */
+  -webkit-text-stroke-width: 0.8px;
+  /* Grosor del contorno */
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  /* Color del contorno */
+}
+
+.footer {
+  padding: 4px 120px 11px 120px;
+  background-color: rgba(35, 35, 35, 0.5490196078);
+  position: relative;
+  left: -120px;
+  width: 100%;
+  margin-top: 88px;
+  text-align: end;
+}
+.footer__text {
+  color: #fff;
+  margin: 0;
+  font-size: 12px;
+}
+.footer__text__link {
+  font-size: 18px;
+  background: -webkit-linear-gradient(hsla(273, 37%, 55%, 0.932), hsla(284, 66%, 69%, 0.932), #f3d829);
+  -webkit-background-clip: text;
+  font-weight: 800;
+  -webkit-text-fill-color: transparent;
+  padding: 0 6px;
+}
+.footer__text__link__image {
+  width: 97px;
+  position: relative;
+  bottom: -9px;
+  transition: 0.1s;
+}
+.footer__text__link__image:hover {
+  scale: 1.06;
+  transition: 0.1s ease all;
+}
+
+@media screen and (max-width: 1760px) {
+  body {
+    padding: 80px 80px 0 80px;
+  }
+  .marquee-container {
+    width: calc(100% + 160px) !important;
+    left: -80px !important;
+  }
+  .footer {
+    left: -80px !important;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media screen and (max-width: 1540px) {
+  body {
+    padding: 80px 40px 0 40px;
+  }
+  .marquee-container {
+    width: calc(100% + 80px) !important;
+    left: -40px !important;
+  }
+  .footer {
+    left: -40px !important;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 1210px) {
+  .gallery__item {
+    width: calc(50% - 11px);
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    padding: 80px 16px 0 16px;
+  }
+  .marquee-container {
+    width: calc(100% + 32px) !important;
+    left: -16px !important;
+  }
+  .footer {
+    left: -16px !important;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .marquee-left {
+    animation: marquee-left 20s linear infinite !important;
+  }
+  .marquee-right {
+    animation: marquee-right 20s linear infinite !important;
+  }
+  .add-main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 44px;
+    gap: 40px;
+  }
+  .add-main > .title {
+    text-align: center;
+    font-size: 40px;
+  }
+  .add-main__form {
+    width: 88%;
+  }
+  .form-group input[type=text] {
+    width: calc(100% - 22px);
+  }
+  .form-group--title {
+    width: 100%;
+  }
+  button[type=submit] {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .gallery__item {
+    width: 100%;
+  }
+  .marquee-left {
+    animation: marquee-left 80s linear infinite !important;
+  }
+  .marquee-right {
+    animation: marquee-right 80s linear infinite !important;
+  }
+  .marquee-container {
+    margin-top: 8px !important;
+  }
+  .footer {
+    margin-top: 8px;
+  }
+}
+@media screen and (max-width: 512px) {
+  .title {
+    font-size: 64px;
+  }
+  .add-btn {
+    padding: 12px 8px;
+    width: calc(100% - 32px);
+  }
+  .footer__text {
+    font-size: 10px;
+  }
+  .footer__text__link {
+    font-size: 16px;
+  }
+  .footer__text__link__image {
+    width: 80px;
+    position: relative;
+    bottom: -9px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,497 @@
+@import url(gradient.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rakkas&display=swap');
+
+$fontMain : "Poppins",
+sans-serif;
+$fontTitle : "Rakkas",
+serif;
+$padding-desk : 120px;
+$padding-large : 80px;
+$padding-medium : 40px;
+$padding-small : 16px;
+
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(285deg 63.34% 91.81%) #333;
+}
+
+body {
+    font-family: $fontMain;
+    color: #333;
+    margin: 0;
+    padding: 80px $padding-desk 0 $padding-desk;
+    min-height: 83vh;
+}
+
+
+body.edit,
+body.add {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.custom-cursor:hover {
+    cursor: url('../assets/icons/eye.svg'), auto;
+    scale: 1.033;
+    transition: all .2s ease;
+}
+
+
+
+.title {
+    color: #fff;
+    text-align: center;
+    font-family: $fontTitle;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 90px;
+    margin: 0 0 28px 0;
+}
+
+.add-btn {
+    padding: 12px 88px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 56px;
+    transition: all .15s ease;
+
+    &:hover {
+        scale: 1.08;
+        transition: all .2s ease;
+    }
+}
+
+
+a {
+    text-decoration: none;
+    color: #379683;
+
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    row-gap: 44px;
+    justify-content: center;
+    width: 100%;
+
+    &__item {
+
+        width: calc(33% - 11.0px);
+        height: fit-content;
+        border-radius: 8px;
+
+        &__img {
+
+            width: 100%;
+            height: 300px;
+            border-radius: 2px;
+            background-size: cover;
+            display: block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            transition: all .2s ease;
+
+            &:hover {
+
+                transition: all .2s ease;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 5.15)
+            }
+
+        }
+
+        &__title {
+            color: #fff;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        &__foot {
+            padding: 6px 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__buttons {
+
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+
+                &__item {
+                    &>img {
+                        height: 16px;
+
+                        &:hover {
+                            scale: 1.2;
+                            transition: .2s easy all;
+                        }
+                    }
+
+                    &--delete {
+                        &>img {
+                            height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// form
+
+.add-main__form {
+    width: 300px;
+    margin: 0 auto;
+
+    & input {
+        background-color: transparent;
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group--title {
+    width: 369px;
+
+    & label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-18px);
+        background: transparent;
+        padding: 0 5px;
+        color: #ccc;
+        font-size: 18px;
+        transition: 0.3s ease all;
+        pointer-events: none;
+
+        &.label-focus {
+            transform: translateY(-47px);
+            font-size: 18px;
+            color: #999;
+        }
+    }
+}
+
+.form-group input[type="text"] //, .form-group input[type="file"] 
+
+    {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-bottom-color 0.3s ease-in-out;
+}
+
+.form-group input[type="text"]:focus // , .form-group input[type="file"]:focus 
+
+    {
+    border-bottom-color: hsl(286, 41%, 84%);
+}
+
+
+.form-group input[type="text"]:focus+label,
+.form-group input:not(:placeholder-shown)+label {
+
+    left: 5px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+
+.form-group input[type="file"] {
+    padding: 5px 0;
+    /* Ajustar el padding para que no desborde */
+}
+
+
+
+button[type="submit"] {
+    padding: 12px 88px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    transition: all 0.15s;
+    cursor: pointer;
+    width: 395px;
+    background: transparent;
+    font-family: $fontMain;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    scale: 1.08;
+    transition: all 0.2s ease;
+}
+
+
+// end of form
+
+.form-group--file>input {
+    border: none;
+    color: #ddd;
+    cursor: pointer;
+    font-family: $fontMain;
+    font-size: 16px;
+
+    &:hover {
+        transition: .2s;
+        scale: 1.03;
+    }
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 22px;
+}
+
+
+
+// Interfaz de Añadir imagen
+.add-main {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 48px;
+
+    &>.title {
+
+        text-align: end;
+        line-height: 104%;
+        margin: 0;
+        font-size: 64px;
+        font-family: $fontMain;
+
+        &>strong {
+            color: hsl(285deg 63.34% 91.81%);
+        }
+    }
+
+    &__form {
+        margin: 0;
+        width: fit-content;
+    }
+
+}
+
+.add-btn--add {
+    margin: 0;
+    margin-top: 140px;
+    font-weight: 700;
+    font-size: 32px;
+    color: hsl(285deg 63.34% 91.81%);
+    border: none;
+
+    & .arrow {
+        transform: rotate(180deg);
+        height: 20px;
+
+    }
+}
+
+.outline-text {
+    /* Tamaño de la fuente */
+    color: transparent;
+    /* Relleno transparente */
+    -webkit-text-stroke-width: .8px;
+    /* Grosor del contorno */
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    /* Color del contorno */
+}
+
+.footer {
+    padding: 4px $padding-desk 11px $padding-desk;
+    background-color: #2323238c;
+    position: relative;
+    left: - $padding-desk;
+    width: 100%;
+    margin-top: 88px;
+    text-align: end;
+
+    &__text {
+        color: #fff;
+        margin: 0;
+        font-size: 12px;
+
+        &__link {
+            font-size: 18px;
+            background: -webkit-linear-gradient(hsla(273, 37%, 55%, 0.932), hsla(284, 66%, 69%, 0.932), #f3d829);
+            -webkit-background-clip: text;
+            font-weight: 800;
+            -webkit-text-fill-color: transparent;
+            padding: 0 6px;
+
+            &__image {
+                width: 97px;
+                position: relative;
+                bottom: -9px;
+                transition: .1s;
+                &:hover{
+                    scale: 1.06;
+                    transition: .1s ease all;
+                }
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    body {
+        padding: 80px $padding-large 0 $padding-large;
+    }
+
+    .marquee-container {
+
+        width: calc(100% + $padding-large*2) !important;
+        left: -$padding-large !important;
+    }
+
+    .footer {
+        left: -$padding-large !important;
+        padding-left: $padding-large;
+        padding-right: $padding-large;
+    }
+}
+
+@media screen and (max-width: 1540px) {
+    body {
+        padding: 80px $padding-medium 0 $padding-medium;
+    }
+
+    .marquee-container {
+
+        width: calc(100% + $padding-medium*2) !important;
+        left: -$padding-medium !important;
+    }
+
+    .footer {
+        left: -$padding-medium !important;
+        padding-left: $padding-medium;
+        padding-right: $padding-medium;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .gallery__item {
+        width: calc(50% - 11px);
+    }
+}
+
+@media screen and (max-width: 760px) {
+    body {
+        padding: 80px $padding-small 0 $padding-small;
+    }
+
+    .marquee-container {
+
+        width: calc(100% + $padding-small*2) !important;
+        left: -$padding-small !important;
+    }
+
+    .footer {
+        left: -$padding-small !important;
+        padding-left: $padding-small;
+        padding-right: $padding-small;
+    }
+
+    .marquee-left{
+        animation: marquee-left 20s linear infinite !important;
+    }
+    .marquee-right{
+        animation: marquee-right 20s linear infinite !important;
+    }
+    .add-main{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-top: 44px;
+        gap: 40px;
+        & > .title{
+            text-align: center;
+            font-size: 40px;
+        }
+        &__form{
+            width: 88%;
+        }
+    }
+    .form-group input[type=text] {
+        width: calc(100% - 22px);
+    }
+    .form-group--title {
+        width: 100%;
+    }
+    button[type=submit] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .gallery__item {
+        width: 100%;
+    }
+    .marquee-left{
+        animation: marquee-left 80s linear infinite !important;
+    }
+    .marquee-right{
+        animation: marquee-right 80s linear infinite !important;
+    }
+    .marquee-container{
+        margin-top: 8px !important;
+    }
+    .footer{
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 512px){
+    .title{
+        font-size: 64px;
+    }
+    .add-btn{
+        padding: 12px 8px;
+        width: calc(100% - 32px);
+    }
+    .footer {
+    
+        &__text {
+           
+            font-size: 10px;
+    
+            &__link {
+                font-size: 16px;
+                
+                &__image {
+                    width: 80px;
+                    position: relative;
+                    bottom: -9px;
+                }
+            }
+        }
+    }
+}
+

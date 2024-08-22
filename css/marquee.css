@@ -1,0 +1,177 @@
+.marquee-container {
+  position: relative;
+  left: -120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: calc(100% + 240px);
+  height: 444px;
+  background: transparent;
+  margin-top: 88px;
+}
+
+.marquee-container::after {
+  content: "";
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+  opacity: 0.66;
+}
+
+.marquee {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 42%;
+  opacity: 0.44;
+  background-image: url("../assets/logo-favoritas-outline.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-left {
+  animation: marquee-left 160s linear infinite;
+  bottom: 32px;
+}
+
+.marquee-right {
+  animation: marquee-right 160s linear infinite;
+  top: 40px;
+}
+
+@keyframes marquee-left {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 600% 0;
+  }
+}
+@keyframes marquee-right {
+  0% {
+    background-position: 600% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.link-container {
+  position: absolute;
+  z-index: 5;
+}
+
+.solicitar-demo {
+  text-decoration: none;
+  font-size: 72px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.solicitar-demo:hover {
+  opacity: 0.8;
+}
+
+.solicitar-demo > img {
+  height: 64px;
+}
+
+@media screen and (min-width: 880px) and (max-width: 1000px) {
+  @keyframes marquee-left {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 1000% 0;
+    }
+  }
+  @keyframes marquee-right {
+    0% {
+      background-position: 1000% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  .marquee-right {
+    animation: marquee-right 60s linear infinite;
+  }
+  .marquee-left {
+    animation: marquee-left 60s linear infinite;
+  }
+}
+@media screen and (max-width: 880px) {
+  .marquee-container {
+    height: 340px;
+  }
+  .solicitar-demo {
+    font-size: 36px;
+  }
+  .solicitar-demo > img {
+    width: 54px;
+  }
+  .link-container {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 612px) {
+  @keyframes marquee-left {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 1600% 0;
+    }
+  }
+  @keyframes marquee-right {
+    0% {
+      background-position: 1600% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  .marquee-container {
+    height: 320px;
+    flex-direction: column;
+  }
+  .marquee {
+    height: 30%;
+  }
+  .marquee-left {
+    bottom: 64px;
+    animation: marquee-left 34s linear infinite;
+  }
+  .marquee-right {
+    top: 64px;
+    animation: marquee-right 34s linear infinite;
+  }
+  .solicitar-demo {
+    font-size: 28px;
+  }
+  .solicitar-demo > img {
+    width: 40px;
+  }
+  .link-container {
+    padding: 0 16px;
+  }
+  .link-container img {
+    height: 65px;
+  }
+}
+@media screen and (min-width: 1912px) {
+  .marquee-left {
+    animation: marquee-left 220s linear infinite;
+  }
+  .marquee-right {
+    animation: marquee-right 220s linear infinite;
+  }
+}/*# sourceMappingURL=marquee.css.map */
