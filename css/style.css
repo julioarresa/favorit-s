@@ -143,9 +143,10 @@ a {
   font-size: 18px;
   transition: 0.3s ease all;
   pointer-events: none;
+  z-index: -1;
 }
 .form-group--title label.label-focus {
-  transform: translateY(-47px);
+  transform: translateY(-52px);
   font-size: 18px;
   color: #999;
 }
