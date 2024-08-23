@@ -2,14 +2,14 @@
 Crud de imágenes
 
 Tabla de Contenidos:
-Requisitos Previos
-Instalación
-Cómo Probar la Aplicación
-Proceso de Desarrollo y Justificación
-Arquitectura
-Técnicas Utilizadas
-Consideraciones Adicionales
-Próximos Pasos y Mejoras
+- Requisitos Previos
+- Instalación
+- Cómo Probar la Aplicación
+- Proceso de Desarrollo y Justificación
+- Arquitectura
+- Técnicas Utilizadas
+- Consideraciones Adicionales
+- Próximos Pasos y Mejoras
 
 
 Requisitos Previos
@@ -29,7 +29,6 @@ git clone https://github.com/julioarresa/favorit-s.git
 
 Configuración de la Base de Datos
 Accede a MySQL y crea una nueva base de datos llamada favoritos_db:
-Importa el esquema de la base de datos desde el archivo schema.sql (si está disponible en el repositorio):
 Si es necesario edita el archivo db.php en el directorio raíz del proyecto para ajustar la configuración de conexión a la base de datos:
 (los datos de conexión están en el archivo db.php)
 $servername = "localhost";
@@ -50,7 +49,7 @@ chmod 755 uploads/
 Cómo Probar la Aplicación
 Acceso a la Aplicación
 
-Abre tu navegador web y navega a http://localhost/mis-imagenes-favoritas/.
+Abre tu navegador web y navega a http://localhost/mis-imagenes-favoritas/index.php
 Pruebas Funcionales
 
 Añadir Imagen: Navega a la sección de "Añadir Nueva Imagen" y sube una imagen junto con un título.
